@@ -1,5 +1,5 @@
 //
-//  LottoAPIManager.swift
+//  PersonAPIManager.swift
 //  SeSacWek9
 //
 //  Created by useok on 2022/08/30.
@@ -7,28 +7,29 @@
 
 import Foundation
 
-enum APIError: Error {
-    case invalidResponse
-    case noData
-    case failedRequest
-    case invalidData
-}
-
-
-class LottoAPIManager {
-    static func requestLott(drwNo: Int, completion: @escaping (Lotto?,APIError?) -> Void) {
-        let url = URL(string: "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drwNo)")!
-        //shared - 단순한,커스텀x,응답클로저,
+class PersonAPIManager {
+    static func requestPerson(query: String, completion: @escaping (Person?, APIError?) -> Void) {
+//        query.addingPercentEncoding(withAllowedCharacters: <#T##CharacterSet#>) //한글입력시 처리
+        let url = URL(string: "https://api.themoviedb.org/3/search/person?api_key=f489dc25fbe453f2a6afaf7b182defd5&language=en-US&query=\(query)&page=1&include_adult=false&region=ko-KR")!
         
-//        let a = URLRequest(url: url)
-//        a.setValue(<#T##value: String?##String?#>, forHTTPHeaderField: <#T##String#>)
+        let scheme = "https"
+        let host = "api.thmoviedb.org" //공통영역
+        let path = "/3/search/person" //세부항목
+        let language = "ko-KR"
+        let key = "f489dc25fbe453f2a6afaf7b182defd5"
+        let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
-        /**
-         URLSession.shared.dataTask
-         - with: 어디에 보낼래? url주소 넣기
-         - completionHandler: 네트워크 통신시 3가지 값(data,response,error)을 받는다.
-         */
-        
+        var component = URLComponents()
+        component.scheme = scheme
+        component.host = host
+        component.path = path
+        component.queryItems = [
+            URLQueryItem(name: "api_key", value: key),
+            URLQueryItem(name: "query", value: query),
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "region", value: language),
+            
+        ]
         URLSession.shared.dataTask(with: url)  { data, response2, error in // 셋중하나는 nil이 된다.
             DispatchQueue.main.async {
                 guard error == nil else { //에러있는지
@@ -54,20 +55,13 @@ class LottoAPIManager {
                 
                 //문제없으면
                 do {
-                    let result = try JSONDecoder().decode(Lotto.self, from: data)
+                    let result = try JSONDecoder().decode(Person.self, from: data)
                     completion(result,nil)
                 } catch {
                     print(error)
                 }
             }
-            
-            
-           
-            
-        }.resume() // resume()은 일시정지해서 보내달라
-        
-        // defauilt-configuration - shared 설정유사, 커스텀 O(셀룰러연결여부,백그라운드상태에서 음악재생,다운로드등) , 응답클로저+딜리게이트
-        // URLSession.init(configuration: . )
+        }.resume()
         
     }
 }
