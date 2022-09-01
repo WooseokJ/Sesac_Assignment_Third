@@ -22,9 +22,9 @@ class Observable<T> { //양방향 바인딩   어려우면 T는 INT라고생각�
         self.value = value
     }
     
-    func bind(_ closure: @escaping (T)->Void) {
-        closure(value)
-        listener = closure
+    func bind(_ com: @escaping (T)->Void) {
+        com(value)
+        listener = com
     }
     
 }
@@ -42,4 +42,12 @@ class User {
     init(_ value: String) {
         self.value = value
     }
+    
+    func bind(_ com: @escaping (String) -> Void) {
+        com(value)    //{ name in
+                    //        print("\(name) 으로 바뀜")
+                    //    }
+        listener = com
+    }
+    
 }

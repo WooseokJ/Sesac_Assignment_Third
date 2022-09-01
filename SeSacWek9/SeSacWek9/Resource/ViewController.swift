@@ -42,11 +42,61 @@ class ViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
-        viewModel.fetchPerson(query: "kim")
-        viewModel.list.bind { Person in
+        viewModel.fetchPerson(query: "kim") //didset실행됨
+        viewModel.list.bind { Person in //VC bind
             print("VC bind")
             self.tableView.reloadData()
         }
+        
+        //MARK: 테스트겸
+//        var num1 = 10
+//        var num2 = 3
+//        print(num1-num2)
+//        num1 = 3
+//        // num1,num2의 값이 계속바뀔떄마다 프린트찍으려면 어떻게해야될까?
+//        var num3 = Observable(10)
+//        var num4 = Observable(3)
+//
+//        num3.bind { a in
+//            print("observable", num3.value - num4.value)
+//        }
+//        print("=====================1")
+//        num3.value = 100
+//        print("=====================2")
+//        num3.value = 200
+//        print("=====================6")
+        
+        //MARK: Sample 예제
+//        let user = UserSample(name: "가가")
+//        user.nameChanged {
+//            print("name chaged Func ")
+//        }
+//        print("=====================7")
+//        let a = UserSample(name: "aa")
+//        a.nameChanged {
+//            print("a chagend")
+//        }
+//        
+//        print("=====================3")
+//        user.name = "나나"
+//        print("=====================4")
+//        user.name = "다다"
+//        print("=====================5")
+        //MARK: user 예제
+        let example = User("가가")
+        example.value = "나나"
+        print("=====================8")
+        example.bind { name in
+            print("\(name) 으로 바뀜")
+        }
+        print("=====================9")
+        let sample = Observable([1,2,3])
+        sample.bind { value in
+            print(value)
+        }
+        
+        
+//        
         
         
     }
