@@ -51,10 +51,6 @@ class LoginViewController: UIViewController {
         viewModel.checkValidation()
     }
     
-//    @IBAction func buttonClicked(_ sender: UIButton) {
-//        viewModel.signIn {
-//            <#code#>
-//        }
-//    }
+
     
 }
