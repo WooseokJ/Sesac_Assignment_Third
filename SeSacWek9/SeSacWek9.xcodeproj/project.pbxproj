@@ -25,6 +25,7 @@
 		E1DA059628BDA731007869F3 /* PersonAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DA059528BDA731007869F3 /* PersonAPIManager.swift */; };
 		E1DA059828BDA907007869F3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DA059728BDA907007869F3 /* Person.swift */; };
 		E1DA059A28BDB773007869F3 /* URLSession+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DA059928BDB773007869F3 /* URLSession+Extention.swift */; };
+		E1EE877428C1868400FB08B8 /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE877328C1868400FB08B8 /* GCDViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E1DA059528BDA731007869F3 /* PersonAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonAPIManager.swift; sourceTree = "<group>"; };
 		E1DA059728BDA907007869F3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E1DA059928BDB773007869F3 /* URLSession+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extention.swift"; sourceTree = "<group>"; };
+		E1EE877328C1868400FB08B8 /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		E1A4A53C28C0485500886C0C /* Present */ = {
 			isa = PBXGroup;
 			children = (
+				E1EE877528C1868A00FB08B8 /* GCD */,
 				E1A4A54228C05AEE00886C0C /* Lotto */,
 				E1A4A53F28C04A2800886C0C /* Login */,
 			);
@@ -165,6 +168,14 @@
 				E1BC7A3C28BEFC0B00BF1967 /* PersonViewModel.swift */,
 			);
 			path = Person;
+			sourceTree = "<group>";
+		};
+		E1EE877528C1868A00FB08B8 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				E1EE877328C1868400FB08B8 /* GCDViewController.swift */,
+			);
+			path = GCD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 				E1A4A54428C05C2B00886C0C /* LottoViewModel.swift in Sources */,
 				E1A4A53628C037F900886C0C /* Sample.swift in Sources */,
 				E1708A2D28BD9505003D060E /* LottoAPIManager.swift in Sources */,
+				E1EE877428C1868400FB08B8 /* GCDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

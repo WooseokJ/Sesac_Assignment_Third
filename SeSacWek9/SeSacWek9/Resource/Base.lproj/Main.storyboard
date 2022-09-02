@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q0R-nQ-rcs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H2D-CL-n3N">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -209,6 +209,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKH-iu-O4R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1800.0000000000002" y="-39.508928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AWP-wc-Kaw">
+            <objects>
+                <viewController id="H2D-CL-n3N" customClass="GCDViewController" customModule="SeSacWek9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IgG-BC-efz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5My-FL-oA7" userLabel="Serial(Main)/Sync">
+                                <rect key="frame" x="20" y="94" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Serial(Main)/Sync"/>
+                                <connections>
+                                    <action selector="SerialSync:" destination="H2D-CL-n3N" eventType="touchUpInside" id="Syj-VH-4qj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbK-Nw-aCp">
+                                <rect key="frame" x="20" y="145" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Serial(Main)/Async"/>
+                                <connections>
+                                    <action selector="serialAsync:" destination="H2D-CL-n3N" eventType="touchUpInside" id="Q04-2C-Her"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4T-5a-40j">
+                                <rect key="frame" x="20" y="196" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Concurrent(Grobal)/Sync"/>
+                                <connections>
+                                    <action selector="globalSync:" destination="H2D-CL-n3N" eventType="touchUpInside" id="A5g-DK-wq6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp3-Tk-HB7">
+                                <rect key="frame" x="20" y="247" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Concurrent(Grobal)/Async"/>
+                                <connections>
+                                    <action selector="globalAsync:" destination="H2D-CL-n3N" eventType="touchUpInside" id="M3X-HM-DaC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRF-mN-Tbn">
+                                <rect key="frame" x="20" y="298" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GCD Qos(Quality Of Service)"/>
+                                <connections>
+                                    <action selector="globalAsync:" destination="H2D-CL-n3N" eventType="touchUpInside" id="Jo0-UD-Ija"/>
+                                    <action selector="qos:" destination="H2D-CL-n3N" eventType="touchUpInside" id="io7-XX-PKH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Okd-gV-zeo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M4T-5a-40j" firstAttribute="top" secondItem="QbK-Nw-aCp" secondAttribute="bottom" constant="20" id="0Li-V5-LBf"/>
+                            <constraint firstItem="QbK-Nw-aCp" firstAttribute="leading" secondItem="Okd-gV-zeo" secondAttribute="leading" constant="20" id="Cpn-w4-Kvs"/>
+                            <constraint firstItem="QbK-Nw-aCp" firstAttribute="top" secondItem="5My-FL-oA7" secondAttribute="bottom" constant="20" id="DmW-S6-G5c"/>
+                            <constraint firstItem="Okd-gV-zeo" firstAttribute="trailing" secondItem="M4T-5a-40j" secondAttribute="trailing" constant="20" id="HU6-kB-i2A"/>
+                            <constraint firstItem="5My-FL-oA7" firstAttribute="leading" secondItem="Okd-gV-zeo" secondAttribute="leading" constant="20" id="PjO-Yw-uVt"/>
+                            <constraint firstItem="Okd-gV-zeo" firstAttribute="trailing" secondItem="QbK-Nw-aCp" secondAttribute="trailing" constant="20" id="QpC-W5-H4a"/>
+                            <constraint firstItem="Rp3-Tk-HB7" firstAttribute="top" secondItem="M4T-5a-40j" secondAttribute="bottom" constant="20" id="RgO-1y-WnZ"/>
+                            <constraint firstItem="M4T-5a-40j" firstAttribute="leading" secondItem="Okd-gV-zeo" secondAttribute="leading" constant="20" id="VWt-WP-I19"/>
+                            <constraint firstItem="Okd-gV-zeo" firstAttribute="trailing" secondItem="Rp3-Tk-HB7" secondAttribute="trailing" constant="20" id="Z2S-eQ-6zs"/>
+                            <constraint firstItem="Rp3-Tk-HB7" firstAttribute="leading" secondItem="Okd-gV-zeo" secondAttribute="leading" constant="20" id="ixS-X0-DqL"/>
+                            <constraint firstItem="NRF-mN-Tbn" firstAttribute="top" secondItem="Rp3-Tk-HB7" secondAttribute="bottom" constant="20" id="n5L-sX-JW1"/>
+                            <constraint firstItem="Okd-gV-zeo" firstAttribute="trailing" secondItem="NRF-mN-Tbn" secondAttribute="trailing" constant="20" id="wRJ-a3-sO1"/>
+                            <constraint firstItem="NRF-mN-Tbn" firstAttribute="leading" secondItem="Okd-gV-zeo" secondAttribute="leading" constant="20" id="xg1-US-Vjt"/>
+                            <constraint firstItem="Okd-gV-zeo" firstAttribute="trailing" secondItem="5My-FL-oA7" secondAttribute="trailing" constant="20" id="yQ4-uk-lDO"/>
+                            <constraint firstItem="5My-FL-oA7" firstAttribute="top" secondItem="Okd-gV-zeo" secondAttribute="top" constant="50" id="yf4-HS-mTh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFQ-hV-eoh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="-40"/>
         </scene>
     </scenes>
     <resources>
