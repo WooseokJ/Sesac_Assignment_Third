@@ -294,16 +294,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="iQP-ec-oKr">
                                 <rect key="frame" x="20" y="553" width="374" height="111"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-Sk-EQL">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-Sk-EQL">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="111"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="8IM-RO-ZSp"/>
+                                        </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bH-Vq-NQb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0bH-Vq-NQb">
                                         <rect key="frame" x="126" y="17.5" width="97" height="76"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="55v-DA-RHX"/>
+                                            <constraint firstAttribute="height" constant="76" id="tNm-zn-mtL"/>
+                                        </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bs3-6K-JQg">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bs3-6K-JQg">
                                         <rect key="frame" x="252" y="17.5" width="122" height="76"/>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="0bH-Vq-NQb" firstAttribute="top" secondItem="iQP-ec-oKr" secondAttribute="top" constant="17.5" id="1FN-eo-7Vd"/>
+                                    <constraint firstItem="0bH-Vq-NQb" firstAttribute="top" secondItem="bs3-6K-JQg" secondAttribute="top" id="QPK-8o-urr"/>
+                                    <constraint firstItem="2jF-Sk-EQL" firstAttribute="top" secondItem="iQP-ec-oKr" secondAttribute="topMargin" id="lw1-dd-lqw"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="397-az-ZWB">
                                 <rect key="frame" x="20" y="684" width="374" height="31"/>
