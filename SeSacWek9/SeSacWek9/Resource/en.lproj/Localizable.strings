@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  SeSacWek9
+
+  Created by useok on 2022/09/06.
+  
+*/
+
+
+"navigation_title" = "My diary";
+
+"common_cancel" = "Cancel";
+
+"search_placeholder" = "Search Movie";
+
+"textField_placeholder" = "How old are you?";
+
+
+
+"introduce" = "my name is %@ "; //문자
+
+"number_test" = "i'm %lld years old"; // 숫자

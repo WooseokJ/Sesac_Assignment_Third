@@ -4,7 +4,7 @@ import Foundation
 
 var greeting = "Hello, playground"
 
-//값전달 프로토콜로 활용
+//값 전달 프로토콜로 활용
 
 protocol MyDelegate: AnyObject {
     func sendData(_ date: String)

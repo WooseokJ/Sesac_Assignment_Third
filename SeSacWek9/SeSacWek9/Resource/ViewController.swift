@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var lottoLabel: UILabel!
     
-    private var viewModel = PersonViewModel()
+    private var viewModel = PersonViewModel() /// 뷰모델에있는 데이터 사용하려고 가져온거
     
 //    var list: Person? = Person(page: 0, totalPages: 0, totalResults: 0, results: []) {
 //        didSet{
@@ -42,11 +42,14 @@ class ViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
-        viewModel.fetchPerson(query: "kim") //didset실행됨
-        viewModel.list.bind { Person in //VC bind
-            print("VC bind")
+        viewModel.fetchPerson(query: "kim") // didset실행됨 //
+          
+        
+        viewModel.list.bind { personType in //VC bind
+            //bind value가 person 으로 들어가서
             self.tableView.reloadData()
         }
+
         
         //MARK: 테스트겸
 //        var num1 = 10
@@ -83,17 +86,17 @@ class ViewController: UIViewController {
 //        user.name = "다다"
 //        print("=====================5")
         //MARK: user 예제
-        let example = User("가가")
-        example.value = "나나"
-        print("=====================8")
-        example.bind { name in
-            print("\(name) 으로 바뀜")
-        }
-        print("=====================9")
-        let sample = Observable([1,2,3])
-        sample.bind { value in
-            print(value)
-        }
+//        let example = User("가가")
+//        example.value = "나나"
+//        print("=====================8")
+//        example.bind { name in
+//            print("\(name) 으로 바뀜")
+//        }
+//        print("=====================9")
+//        let sample = Observable([1,2,3])
+//        sample.bind { value in
+//            print(value)
+//        }
         
         
 //        
@@ -107,13 +110,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return list?.results.count ?? 0 //list가 nil이면 0으로 안됨.
-        return viewModel.numberOfRowsInSection
+        return viewModel.numberOfRowsInSectionJack // 뷰모델에있는 데이터 사용 (result.count)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
 //        cell.textLabel?.text = list?.results[indexPath.row].knwonForDepartment
         
-        let data = viewModel.cellForRowAt(at: indexPath)
+        let data = viewModel.cellForRowAtJack(at: indexPath)
         cell.textLabel?.text = data.name
         cell.detailTextLabel?.text = data.knwonForDepartment
         

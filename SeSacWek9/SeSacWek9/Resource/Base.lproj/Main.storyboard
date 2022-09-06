@@ -277,10 +277,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJh-iF-dK7">
                                 <rect key="frame" x="20" y="451" width="374" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="a"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DispatchGroup"/>
                                 <connections>
-                                    <action selector="DispatchGroupNASAButton:" destination="H2D-CL-n3N" eventType="touchUpInside" id="16i-os-Y4s"/>
-                                    <action selector="a:" destination="H2D-CL-n3N" eventType="touchUpInside" id="HGb-tE-Lc7"/>
+                                    <action selector="english:" destination="H2D-CL-n3N" eventType="touchUpInside" id="c82-RQ-yq1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4z-uU-4WP">
@@ -376,6 +375,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFQ-hV-eoh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2566.666666666667" y="-40.178571428571423"/>
+        </scene>
+        <!--Localizable View Controller-->
+        <scene sceneID="NhI-vC-9Ef">
+            <objects>
+                <viewController id="IPi-aM-8QO" customClass="LocalizableViewController" customModule="SeSacWek9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Fa-h2-56a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Jig-h9-afd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8c-Ga-U3Y">
+                                <rect key="frame" x="80" y="180" width="237" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Caw-nV-Atl">
+                                <rect key="frame" x="109" y="589" width="173" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="umn-Be-5vH">
+                                <rect key="frame" x="80" y="370" width="237" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XDn-xP-ZKT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XDn-xP-ZKT" firstAttribute="trailing" secondItem="Jig-h9-afd" secondAttribute="trailing" id="6h5-gc-cc9"/>
+                            <constraint firstItem="Jig-h9-afd" firstAttribute="leading" secondItem="XDn-xP-ZKT" secondAttribute="leading" id="lUe-R3-wvO"/>
+                            <constraint firstItem="Jig-h9-afd" firstAttribute="top" secondItem="XDn-xP-ZKT" secondAttribute="top" id="pQ1-ul-nti"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sog-Gf-VNZ"/>
+                    <connections>
+                        <outlet property="inputTextField" destination="umn-Be-5vH" id="wti-CD-cI0"/>
+                        <outlet property="myLabel" destination="w8c-Ga-U3Y" id="2RA-yd-Miv"/>
+                        <outlet property="sampleButton" destination="Caw-nV-Atl" id="vxf-J8-Vte"/>
+                        <outlet property="searchBar" destination="Jig-h9-afd" id="bcc-JP-zHA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xS-3G-0QF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4418.840579710145" y="-40.178571428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T5K-lQ-rpC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BGB-9P-7MX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S8X-wn-55U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IPi-aM-8QO" kind="relationship" relationship="rootViewController" id="r3u-PL-739"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFx-df-UTK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3508.6956521739135" y="-40.178571428571423"/>
         </scene>
     </scenes>
     <resources>
