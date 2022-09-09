@@ -10,3 +10,4 @@
 :---: |--- 
 1| [다국어지원](https://github.com/WooseokJ/Sesac_Assignment_Third/tree/main/SeSacWek9/SeSacWek9/Present) |  |
 
+### [문법 모음](https://github.com/WooseokJ/Sesac_Assignment_Second/tree/main/%EB%AC%B8%EB%B2%952.playground/Pages)
